@@ -27,7 +27,7 @@ namespace SignalRGB.Services
         {
             if (forceRefresh && IsConnected)
             {
-                var json = await client.GetStringAsync($"api/item");
+                var json = await client.GetStringAsync ($"api/item");
                 items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Item>>(json));
             }
 
